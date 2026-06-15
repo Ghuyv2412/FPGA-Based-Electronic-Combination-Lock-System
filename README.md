@@ -51,31 +51,3 @@ The system utilizes a structured, hierarchical "divide-and-conquer" approach, sp
 * `lcd_controller.v`: Governs parallel 8-bit communication buses and exact timing sequences to write dynamic ASCII instruction strings onto the HD44780 LCD panel.
 * `output_top.v`: Final packaging wrapper that physically routes synthesized logic ports straight to the FPGA pin assignments.
 
----
-
-## Architectural Block Diagram
-
-```text
-               +-------------------------------------------+
-               |                TOP_INPUT                  |
-Keypad 4x4 --->| [quetkeypad] -> [chongnhieu] -> [clean]  |---+
-               +-------------------------------------------+   |
-                                                               | (Synchronized Data)
-                                                               v
-               +-------------------------------------------+
-               |                LOGIC_TOP                  |
-               | [fsm_controller] <---> [passdatapath]     |<--+
-               |        ^               (XOR Masking)      |
-               |        |                                  |
-               |        v                                  |
-               | [shiftbuffer] ----------------------------+
-               +-------------------------------------------+
-                        |
-                        | (State & Register Strings)
-                        v
-               +-------------------------------------------+
-               |                OUTPUT_TOP                 |
-               | [lcd_controller]  --> 16x2 LCD Screen     |
-               | [led_7_doan]      --> 7-Segment Displays  |
-               | [warning_buzzer]  --> Buzzer & Alarm LEDs |
-               +-------------------------------------------+
