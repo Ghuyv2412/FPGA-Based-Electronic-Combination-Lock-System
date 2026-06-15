@@ -1,0 +1,97 @@
+# Reading D:/altera/modelsim_ase/tcl/vsim/pref.tcl 
+# do top_module_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/UIT_Document/HDL_Verilog/DoAnHDL {E:/UIT_Document/HDL_Verilog/DoAnHDL/top_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module top_module
+# -- Compiling module Top_input
+# -- Compiling module chia_xung
+# -- Compiling module quetkeypad
+# -- Compiling module chongnhieu
+# -- Compiling module logic_top
+# -- Compiling module shiftbuffer
+# -- Compiling module passdatapath
+# -- Compiling module fsm_controller
+# -- Compiling module output_top
+# -- Compiling module led_7_doan
+# -- Compiling module warning_buzzer
+# -- Compiling module lcd_controller
+# 
+# Top level modules:
+# 	top_module
+# 
+# vlog -vlog01compat -work work +incdir+E:/UIT_Document/HDL_Verilog/DoAnHDL {E:/UIT_Document/HDL_Verilog/DoAnHDL/tb_top_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_top_module
+# 
+# Top level modules:
+# 	tb_top_module
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  tb_top_module
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_top_module 
+# Loading work.tb_top_module
+# Loading work.top_module
+# Loading work.Top_input
+# Loading work.chia_xung
+# Loading work.quetkeypad
+# Loading work.chongnhieu
+# Loading work.logic_top
+# Loading work.shiftbuffer
+# Loading work.passdatapath
+# Loading work.fsm_controller
+# Loading work.output_top
+# Loading work.led_7_doan
+# Loading work.warning_buzzer
+# Loading work.lcd_controller
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# [1000000] He thong da khoi dong xong
+# 
+# --- TEST 1: NHAP DUNG MAT KHAU MAC DINH ---
+# [5001000000] Nhan Phim: 0
+# [65001000000] Nhan Phim: 0
+# [125001000000] Nhan Phim: 0
+# [185001000000] Nhan Phim: 0
+# [245001000000] Nhan Phim: a
+# -> PASS! Cua da mo (LEDG = 1)
+# [306001000000] ---> TUA NHANH THOI GIAN DONG CUA (5 giay) <---
+# 
+# --- TEST 2: DOI MAT KHAU (Moi: 1234) ---
+# [307051000000] Nhan Phim: 0
+# [367051000000] Nhan Phim: 0
+# [427051000000] Nhan Phim: 0
+# [487051000000] Nhan Phim: 0
+# [547051000000] Nhan Phim: a
+# [608051000000] Nhan Phim: d
+# Dang nhap pass moi...
+# [668051000000] Nhan Phim: 1
+# [728051000000] Nhan Phim: 2
+# [788051000000] Nhan Phim: 3
+# [848051000000] Nhan Phim: 4
+# [908051000000] Nhan Phim: a
+# [968051000000] ---> TUA NHANH THOI GIAN DONG CUA (5 giay) <---
+# 
+# --- TEST 3: THU MO CUA BANG PASS CU (0000) ---
+# [969101000000] Nhan Phim: 0
+# [1029101000000] Nhan Phim: 0
+# [1089101000000] Nhan Phim: 0
+# [1149101000000] Nhan Phim: 0
+# ** Failure: (vsim-VCD-8109) Unable to write more data to VCD file "waveform.vcd"
+#    Time: 1181085310 ns  Iteration: 0  Process: /tb_top_module/#INITIAL#38 File: E:/UIT_Document/HDL_Verilog/DoAnHDL/tb_top_module.v
+# Break in Module tb_top_module at E:/UIT_Document/HDL_Verilog/DoAnHDL/tb_top_module.v line 40
+# Simulation Breakpoint: Break in Module tb_top_module at E:/UIT_Document/HDL_Verilog/DoAnHDL/tb_top_module.v line 40
+# MACRO ./top_module_run_msim_rtl_verilog.do PAUSED at line 17

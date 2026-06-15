@@ -1,0 +1,1395 @@
+TimeQuest Timing Analyzer report for top_module
+Fri May 22 10:03:21 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; top_module                                                        ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 188.18 MHz ; 188.18 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.314 ; -524.009      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -203.380              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                                                    ;
++--------+-------------------------------------------------------------------+-------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                         ; To Node                                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------------------------+-------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.314 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_WRONG ; clk          ; clk         ; 1.000        ; 0.000      ; 5.350      ;
+; -4.314 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.350      ;
+; -4.283 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.318      ;
+; -4.283 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.318      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.281 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.317      ;
+; -4.235 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.272      ;
+; -4.235 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.272      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.233 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.271      ;
+; -4.198 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.235      ;
+; -4.198 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.235      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.196 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.002      ; 5.234      ;
+; -4.183 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_WRONG ; clk          ; clk         ; 1.000        ; 0.000      ; 5.219      ;
+; -4.183 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.219      ;
+; -4.179 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.215      ;
+; -4.179 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.215      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.177 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.001      ; 5.214      ;
+; -4.173 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.208      ;
+; -4.173 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.208      ;
+; -4.172 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.207      ;
+; -4.172 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.171 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.207      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.170 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.206      ;
+; -4.164 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.199      ;
+; -4.164 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.199      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.162 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.198      ;
+; -4.146 ; logic_top:u_logic|fsm_controller:u_fsm_controller|state_code[1]   ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_DATA[0]         ; clk          ; clk         ; 1.000        ; -0.003     ; 5.179      ;
+; -4.132 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.167      ;
+; -4.132 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 5.167      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.130 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.128 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[0]         ; clk          ; clk         ; 1.000        ; -0.012     ; 5.152      ;
+; -4.128 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[1]         ; clk          ; clk         ; 1.000        ; -0.012     ; 5.152      ;
+; -4.128 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[2]         ; clk          ; clk         ; 1.000        ; -0.012     ; 5.152      ;
+; -4.128 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[4]         ; clk          ; clk         ; 1.000        ; -0.012     ; 5.152      ;
+; -4.128 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]         ; clk          ; clk         ; 1.000        ; -0.012     ; 5.152      ;
+; -4.128 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[3]         ; clk          ; clk         ; 1.000        ; -0.012     ; 5.152      ;
+; -4.121 ; logic_top:u_logic|fsm_controller:u_fsm_controller|state_code[0]   ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_DATA[0]         ; clk          ; clk         ; 1.000        ; -0.003     ; 5.154      ;
++--------+-------------------------------------------------------------------+-------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                                                      ;
++-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                     ; To Node                                                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[0]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[1]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[2]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[3]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_DELAY        ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_DELAY        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_IDLE         ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_IDLE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; logic_top:u_logic|fsm_controller:u_fsm_controller|door_open                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|door_open                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|warning_buzzer:u_warning_buzzer|blink_sig                 ; output_top:u_output|warning_buzzer:u_warning_buzzer|blink_sig                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[0]              ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[1]              ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[2]              ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_DATA[7]               ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_DATA[7]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_RS                    ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_RS                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.531 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[31]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[31]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.531 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[23]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[23]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.535 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[11]                   ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[7]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.538 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[8]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[4]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.804      ;
+; 0.542 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[22]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[22]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.808      ;
+; 0.556 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_PULSE        ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.822      ;
+; 0.569 ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]               ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.835      ;
+; 0.661 ; Top_input:u_input|chongnhieu:u_chongnhieu|ff1                                 ; Top_input:u_input|chongnhieu:u_chongnhieu|ff2                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.927      ;
+; 0.676 ; output_top:u_output|lcd_controller:u_lcd_controller|update_req                ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_SETUP        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.942      ;
+; 0.745 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; logic_top:u_logic|passdatapath:u_pass_datapath|stored_pass[9]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.011      ;
+; 0.787 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_HOLD         ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.794 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[10]                   ; logic_top:u_logic|passdatapath:u_pass_datapath|stored_pass[10]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.795 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.795 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[0]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.795 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[16]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[16]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.797 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.063      ;
+; 0.800 ; output_top:u_output|lcd_controller:u_lcd_controller|pre_state_code[2]         ; output_top:u_output|lcd_controller:u_lcd_controller|update_req                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.066      ;
+; 0.800 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[12]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[12]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.066      ;
+; 0.801 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.801 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[0]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.803 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.069      ;
+; 0.804 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[11]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.805 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[1]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[1]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[17]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[17]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[5]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[7]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[2]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[2]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[4]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[4]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[9]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[9]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[11]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[11]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[14]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[14]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[18]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[18]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[23]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[23]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[25]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[25]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[27]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[27]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[29]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[29]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[30]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[30]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[9]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[9]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.807 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.807 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[5]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.808 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
+; 0.808 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
+; 0.808 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
+; 0.808 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[13]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[13]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
+; 0.809 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.809 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[21]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[21]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.810 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[11]                   ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[15]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[10]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[10]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[11]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[11]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[19]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[19]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[16]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[16]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.811 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[2]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[6]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.077      ;
+; 0.813 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[8]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[12]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.813 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[6]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[10]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.813 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[14]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[14]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.814 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[7]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[7]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[13]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[13]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[15]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[15]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[20]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[20]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[13]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_IDLE         ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_SETUP        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.815 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[12]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[5]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[7]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[11]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.816 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[20]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[20]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.820 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_POWER_ON     ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_INIT         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.086      ;
+; 0.822 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[18]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[18]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.088      ;
+; 0.825 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.827 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.093      ;
+; 0.828 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.094      ;
+; 0.829 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.095      ;
+; 0.830 ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_COMPARE     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.096      ;
+; 0.832 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[1]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.098      ;
+; 0.834 ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[1]               ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[1]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 0.835 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
++-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[10]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[10]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[12]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[12]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[14]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[14]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[15]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[15]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[8]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[8]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[9]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[9]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[17]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[17]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[18]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[18]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable_delay                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable_delay                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff1                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff1                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff2                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff2                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|backspace_en                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|backspace_en                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|clear_buf                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|clear_buf                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|cmd_update                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|cmd_update                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_COMPARE     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_COMPARE     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_IDLE        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_IDLE        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_WRONG       ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; col[*]    ; clk        ; 9.145 ; 9.145 ; Rise       ; clk             ;
+;  col[0]   ; clk        ; 8.967 ; 8.967 ; Rise       ; clk             ;
+;  col[1]   ; clk        ; 9.111 ; 9.111 ; Rise       ; clk             ;
+;  col[2]   ; clk        ; 9.145 ; 9.145 ; Rise       ; clk             ;
+;  col[3]   ; clk        ; 8.560 ; 8.560 ; Rise       ; clk             ;
+; reset_n   ; clk        ; 5.012 ; 5.012 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; col[*]    ; clk        ; -4.472 ; -4.472 ; Rise       ; clk             ;
+;  col[0]   ; clk        ; -4.869 ; -4.869 ; Rise       ; clk             ;
+;  col[1]   ; clk        ; -5.218 ; -5.218 ; Rise       ; clk             ;
+;  col[2]   ; clk        ; -5.306 ; -5.306 ; Rise       ; clk             ;
+;  col[3]   ; clk        ; -4.472 ; -4.472 ; Rise       ; clk             ;
+; reset_n   ; clk        ; -4.782 ; -4.782 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; BUZZER       ; clk        ; 9.859 ; 9.859 ; Rise       ; clk             ;
+; HEX0[*]      ; clk        ; 9.823 ; 9.823 ; Rise       ; clk             ;
+;  HEX0[0]     ; clk        ; 9.173 ; 9.173 ; Rise       ; clk             ;
+;  HEX0[1]     ; clk        ; 9.086 ; 9.086 ; Rise       ; clk             ;
+;  HEX0[2]     ; clk        ; 9.823 ; 9.823 ; Rise       ; clk             ;
+;  HEX0[3]     ; clk        ; 8.887 ; 8.887 ; Rise       ; clk             ;
+;  HEX0[4]     ; clk        ; 9.797 ; 9.797 ; Rise       ; clk             ;
+;  HEX0[5]     ; clk        ; 9.598 ; 9.598 ; Rise       ; clk             ;
+;  HEX0[6]     ; clk        ; 8.889 ; 8.889 ; Rise       ; clk             ;
+; HEX1[*]      ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  HEX1[0]     ; clk        ; 7.792 ; 7.792 ; Rise       ; clk             ;
+;  HEX1[1]     ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  HEX1[2]     ; clk        ; 7.588 ; 7.588 ; Rise       ; clk             ;
+;  HEX1[3]     ; clk        ; 7.623 ; 7.623 ; Rise       ; clk             ;
+;  HEX1[4]     ; clk        ; 7.605 ; 7.605 ; Rise       ; clk             ;
+;  HEX1[5]     ; clk        ; 7.871 ; 7.871 ; Rise       ; clk             ;
+;  HEX1[6]     ; clk        ; 7.656 ; 7.656 ; Rise       ; clk             ;
+; HEX2[*]      ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+;  HEX2[0]     ; clk        ; 7.541 ; 7.541 ; Rise       ; clk             ;
+;  HEX2[1]     ; clk        ; 7.463 ; 7.463 ; Rise       ; clk             ;
+;  HEX2[2]     ; clk        ; 7.509 ; 7.509 ; Rise       ; clk             ;
+;  HEX2[3]     ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+;  HEX2[4]     ; clk        ; 7.229 ; 7.229 ; Rise       ; clk             ;
+;  HEX2[5]     ; clk        ; 7.511 ; 7.511 ; Rise       ; clk             ;
+;  HEX2[6]     ; clk        ; 7.527 ; 7.527 ; Rise       ; clk             ;
+; HEX3[*]      ; clk        ; 7.735 ; 7.735 ; Rise       ; clk             ;
+;  HEX3[0]     ; clk        ; 7.706 ; 7.706 ; Rise       ; clk             ;
+;  HEX3[1]     ; clk        ; 7.439 ; 7.439 ; Rise       ; clk             ;
+;  HEX3[2]     ; clk        ; 7.481 ; 7.481 ; Rise       ; clk             ;
+;  HEX3[3]     ; clk        ; 7.479 ; 7.479 ; Rise       ; clk             ;
+;  HEX3[4]     ; clk        ; 7.484 ; 7.484 ; Rise       ; clk             ;
+;  HEX3[5]     ; clk        ; 7.730 ; 7.730 ; Rise       ; clk             ;
+;  HEX3[6]     ; clk        ; 7.735 ; 7.735 ; Rise       ; clk             ;
+; LCD_DATA[*]  ; clk        ; 9.193 ; 9.193 ; Rise       ; clk             ;
+;  LCD_DATA[0] ; clk        ; 8.779 ; 8.779 ; Rise       ; clk             ;
+;  LCD_DATA[1] ; clk        ; 7.759 ; 7.759 ; Rise       ; clk             ;
+;  LCD_DATA[2] ; clk        ; 8.300 ; 8.300 ; Rise       ; clk             ;
+;  LCD_DATA[3] ; clk        ; 9.193 ; 9.193 ; Rise       ; clk             ;
+;  LCD_DATA[4] ; clk        ; 8.797 ; 8.797 ; Rise       ; clk             ;
+;  LCD_DATA[5] ; clk        ; 8.230 ; 8.230 ; Rise       ; clk             ;
+;  LCD_DATA[6] ; clk        ; 9.164 ; 9.164 ; Rise       ; clk             ;
+;  LCD_DATA[7] ; clk        ; 9.080 ; 9.080 ; Rise       ; clk             ;
+; LCD_EN       ; clk        ; 8.020 ; 8.020 ; Rise       ; clk             ;
+; LCD_RS       ; clk        ; 7.568 ; 7.568 ; Rise       ; clk             ;
+; LEDG         ; clk        ; 8.570 ; 8.570 ; Rise       ; clk             ;
+; LEDR         ; clk        ; 9.417 ; 9.417 ; Rise       ; clk             ;
+; row[*]       ; clk        ; 8.881 ; 8.881 ; Rise       ; clk             ;
+;  row[0]      ; clk        ; 8.845 ; 8.845 ; Rise       ; clk             ;
+;  row[1]      ; clk        ; 8.797 ; 8.797 ; Rise       ; clk             ;
+;  row[2]      ; clk        ; 8.881 ; 8.881 ; Rise       ; clk             ;
+;  row[3]      ; clk        ; 8.844 ; 8.844 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; BUZZER       ; clk        ; 9.052 ; 9.052 ; Rise       ; clk             ;
+; HEX0[*]      ; clk        ; 8.581 ; 8.581 ; Rise       ; clk             ;
+;  HEX0[0]     ; clk        ; 8.866 ; 8.866 ; Rise       ; clk             ;
+;  HEX0[1]     ; clk        ; 8.778 ; 8.778 ; Rise       ; clk             ;
+;  HEX0[2]     ; clk        ; 9.512 ; 9.512 ; Rise       ; clk             ;
+;  HEX0[3]     ; clk        ; 8.582 ; 8.582 ; Rise       ; clk             ;
+;  HEX0[4]     ; clk        ; 9.494 ; 9.494 ; Rise       ; clk             ;
+;  HEX0[5]     ; clk        ; 9.290 ; 9.290 ; Rise       ; clk             ;
+;  HEX0[6]     ; clk        ; 8.581 ; 8.581 ; Rise       ; clk             ;
+; HEX1[*]      ; clk        ; 7.264 ; 7.264 ; Rise       ; clk             ;
+;  HEX1[0]     ; clk        ; 7.463 ; 7.463 ; Rise       ; clk             ;
+;  HEX1[1]     ; clk        ; 7.706 ; 7.706 ; Rise       ; clk             ;
+;  HEX1[2]     ; clk        ; 7.264 ; 7.264 ; Rise       ; clk             ;
+;  HEX1[3]     ; clk        ; 7.295 ; 7.295 ; Rise       ; clk             ;
+;  HEX1[4]     ; clk        ; 7.279 ; 7.279 ; Rise       ; clk             ;
+;  HEX1[5]     ; clk        ; 7.544 ; 7.544 ; Rise       ; clk             ;
+;  HEX1[6]     ; clk        ; 7.334 ; 7.334 ; Rise       ; clk             ;
+; HEX2[*]      ; clk        ; 6.913 ; 6.913 ; Rise       ; clk             ;
+;  HEX2[0]     ; clk        ; 7.231 ; 7.231 ; Rise       ; clk             ;
+;  HEX2[1]     ; clk        ; 7.141 ; 7.141 ; Rise       ; clk             ;
+;  HEX2[2]     ; clk        ; 7.184 ; 7.184 ; Rise       ; clk             ;
+;  HEX2[3]     ; clk        ; 7.231 ; 7.231 ; Rise       ; clk             ;
+;  HEX2[4]     ; clk        ; 6.913 ; 6.913 ; Rise       ; clk             ;
+;  HEX2[5]     ; clk        ; 7.197 ; 7.197 ; Rise       ; clk             ;
+;  HEX2[6]     ; clk        ; 7.201 ; 7.201 ; Rise       ; clk             ;
+; HEX3[*]      ; clk        ; 6.914 ; 6.914 ; Rise       ; clk             ;
+;  HEX3[0]     ; clk        ; 7.182 ; 7.182 ; Rise       ; clk             ;
+;  HEX3[1]     ; clk        ; 6.914 ; 6.914 ; Rise       ; clk             ;
+;  HEX3[2]     ; clk        ; 6.957 ; 6.957 ; Rise       ; clk             ;
+;  HEX3[3]     ; clk        ; 6.959 ; 6.959 ; Rise       ; clk             ;
+;  HEX3[4]     ; clk        ; 6.959 ; 6.959 ; Rise       ; clk             ;
+;  HEX3[5]     ; clk        ; 7.208 ; 7.208 ; Rise       ; clk             ;
+;  HEX3[6]     ; clk        ; 7.215 ; 7.215 ; Rise       ; clk             ;
+; LCD_DATA[*]  ; clk        ; 7.759 ; 7.759 ; Rise       ; clk             ;
+;  LCD_DATA[0] ; clk        ; 8.779 ; 8.779 ; Rise       ; clk             ;
+;  LCD_DATA[1] ; clk        ; 7.759 ; 7.759 ; Rise       ; clk             ;
+;  LCD_DATA[2] ; clk        ; 8.300 ; 8.300 ; Rise       ; clk             ;
+;  LCD_DATA[3] ; clk        ; 9.193 ; 9.193 ; Rise       ; clk             ;
+;  LCD_DATA[4] ; clk        ; 8.797 ; 8.797 ; Rise       ; clk             ;
+;  LCD_DATA[5] ; clk        ; 8.230 ; 8.230 ; Rise       ; clk             ;
+;  LCD_DATA[6] ; clk        ; 9.164 ; 9.164 ; Rise       ; clk             ;
+;  LCD_DATA[7] ; clk        ; 9.080 ; 9.080 ; Rise       ; clk             ;
+; LCD_EN       ; clk        ; 8.020 ; 8.020 ; Rise       ; clk             ;
+; LCD_RS       ; clk        ; 7.568 ; 7.568 ; Rise       ; clk             ;
+; LEDG         ; clk        ; 8.570 ; 8.570 ; Rise       ; clk             ;
+; LEDR         ; clk        ; 8.610 ; 8.610 ; Rise       ; clk             ;
+; row[*]       ; clk        ; 8.297 ; 8.297 ; Rise       ; clk             ;
+;  row[0]      ; clk        ; 8.374 ; 8.374 ; Rise       ; clk             ;
+;  row[1]      ; clk        ; 8.297 ; 8.297 ; Rise       ; clk             ;
+;  row[2]      ; clk        ; 8.380 ; 8.380 ; Rise       ; clk             ;
+;  row[3]      ; clk        ; 8.347 ; 8.347 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.473 ; -141.201      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -203.380              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                                                    ;
++--------+-------------------------------------------------------------------+-------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                         ; To Node                                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------------------------+-------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.473 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_WRONG ; clk          ; clk         ; 1.000        ; 0.002      ; 2.507      ;
+; -1.473 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN  ; clk          ; clk         ; 1.000        ; 0.002      ; 2.507      ;
+; -1.416 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.447      ;
+; -1.416 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.447      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.414 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.446      ;
+; -1.411 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.443      ;
+; -1.411 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.443      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.409 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[16] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.442      ;
+; -1.401 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.433      ;
+; -1.401 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.433      ;
+; -1.399 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_WRONG ; clk          ; clk         ; 1.000        ; 0.002      ; 2.433      ;
+; -1.399 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]             ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN  ; clk          ; clk         ; 1.000        ; 0.002      ; 2.433      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.399 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[13] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.432      ;
+; -1.351 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[0]         ; clk          ; clk         ; 1.000        ; -0.009     ; 2.374      ;
+; -1.351 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[1]         ; clk          ; clk         ; 1.000        ; -0.009     ; 2.374      ;
+; -1.351 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[2]         ; clk          ; clk         ; 1.000        ; -0.009     ; 2.374      ;
+; -1.351 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[4]         ; clk          ; clk         ; 1.000        ; -0.009     ; 2.374      ;
+; -1.351 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]         ; clk          ; clk         ; 1.000        ; -0.009     ; 2.374      ;
+; -1.351 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[3]         ; clk          ; clk         ; 1.000        ; -0.009     ; 2.374      ;
+; -1.348 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[0]         ; clk          ; clk         ; 1.000        ; -0.010     ; 2.370      ;
+; -1.348 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[1]         ; clk          ; clk         ; 1.000        ; -0.010     ; 2.370      ;
+; -1.348 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[2]         ; clk          ; clk         ; 1.000        ; -0.010     ; 2.370      ;
+; -1.348 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[4]         ; clk          ; clk         ; 1.000        ; -0.010     ; 2.370      ;
+; -1.348 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]         ; clk          ; clk         ; 1.000        ; -0.010     ; 2.370      ;
+; -1.348 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[3]         ; clk          ; clk         ; 1.000        ; -0.010     ; 2.370      ;
+; -1.340 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.371      ;
+; -1.340 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.371      ;
+; -1.340 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.372      ;
+; -1.340 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.372      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.370      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.338 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.371      ;
+; -1.337 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.368      ;
+; -1.337 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.368      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.335 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.367      ;
+; -1.329 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.360      ;
+; -1.329 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; -0.001     ; 2.360      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.327 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[6]  ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.359      ;
+; -1.325 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.358      ;
+; -1.325 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.358      ;
+; -1.325 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.358      ;
+; -1.325 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.358      ;
+; -1.325 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[15] ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.358      ;
++--------+-------------------------------------------------------------------+-------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                                                      ;
++-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                     ; To Node                                                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[0]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[1]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[2]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[3]              ; output_top:u_output|lcd_controller:u_lcd_controller|init_step[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_DELAY        ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_DELAY        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_IDLE         ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_IDLE         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; logic_top:u_logic|fsm_controller:u_fsm_controller|door_open                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|door_open                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|warning_buzzer:u_warning_buzzer|blink_sig                 ; output_top:u_output|warning_buzzer:u_warning_buzzer|blink_sig                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[0]              ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[1]              ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[2]              ; logic_top:u_logic|fsm_controller:u_fsm_controller|error_count[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_DATA[7]               ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_DATA[7]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_RS                    ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_RS                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[31]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[31]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.245 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[23]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[23]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[11]                   ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[7]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.249 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[8]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[4]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[22]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[22]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.260 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_PULSE        ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.412      ;
+; 0.264 ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]               ; output_top:u_output|lcd_controller:u_lcd_controller|char_idx[5]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.416      ;
+; 0.309 ; output_top:u_output|lcd_controller:u_lcd_controller|update_req                ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_SETUP        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.461      ;
+; 0.326 ; Top_input:u_input|chongnhieu:u_chongnhieu|ff1                                 ; Top_input:u_input|chongnhieu:u_chongnhieu|ff2                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.355 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[0]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[16]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[16]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.357 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[11]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[1]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[1]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[17]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[17]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[12]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[12]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[2]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[2]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[9]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[9]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[11]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[11]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[18]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[18]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[25]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[25]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[27]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[27]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; output_top:u_output|lcd_controller:u_lcd_controller|pre_state_code[2]         ; output_top:u_output|lcd_controller:u_lcd_controller|update_req                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[4]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[4]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[14]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[14]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[23]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[23]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[29]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[29]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[30]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[30]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[0]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[5]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[13]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[13]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[7]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[21]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[21]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[9]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[9]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[10]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[10]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[11]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[11]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[19]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[19]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[16]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[16]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[7]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[7]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[13]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[13]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[15]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[15]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[20]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[20]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[5]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[14]               ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[14]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[12]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[20]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[20]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_HOLD         ; output_top:u_output|lcd_controller:u_lcd_controller|LCD_EN                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_IDLE         ; output_top:u_output|lcd_controller:u_lcd_controller|lcd_state.ST_SETUP        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]              ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[10]                      ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[10]                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[12]                      ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[12]                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[7]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[11]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[11]                   ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[15]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[2]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[6]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[18]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[18]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[6]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[10]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[19]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[19]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[21]             ; output_top:u_output|lcd_controller:u_lcd_controller|delay_cnt[21]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[3]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[3]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[8]                    ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[8]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[10]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[10]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[26]                   ; logic_top:u_logic|fsm_controller:u_fsm_controller|timer[26]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[5]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[9]                    ; logic_top:u_logic|shiftbuffer:u_shift_buffer|pass_16bit[13]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[4]                ; output_top:u_output|warning_buzzer:u_warning_buzzer|counter[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
++-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[10]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[10]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[11]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[12]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[12]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[13]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[14]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[14]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[15]                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[15]                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[8]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[8]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[9]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_1000hz[9]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[10]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[12]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[14]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[17]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[17]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[18]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[18]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chia_xung:u_chia_xung|count_100hz[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable_delay                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|btn_stable_delay                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff1                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff1                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff2                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|ff2                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|chongnhieu:u_chongnhieu|shift_reg[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Top_input:u_input|quetkeypad:u_quetkeypad|quet_cnt[1]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|backspace_en                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|backspace_en                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|clear_buf                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|clear_buf                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|cmd_update                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|cmd_update                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_CHANGE_PASS ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_COMPARE     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_COMPARE     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_IDLE        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_IDLE        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_INPUT       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_OPEN        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; logic_top:u_logic|fsm_controller:u_fsm_controller|current_state.S_WRONG       ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; col[*]    ; clk        ; 4.574 ; 4.574 ; Rise       ; clk             ;
+;  col[0]   ; clk        ; 4.478 ; 4.478 ; Rise       ; clk             ;
+;  col[1]   ; clk        ; 4.573 ; 4.573 ; Rise       ; clk             ;
+;  col[2]   ; clk        ; 4.574 ; 4.574 ; Rise       ; clk             ;
+;  col[3]   ; clk        ; 4.282 ; 4.282 ; Rise       ; clk             ;
+; reset_n   ; clk        ; 2.753 ; 2.753 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; col[*]    ; clk        ; -2.399 ; -2.399 ; Rise       ; clk             ;
+;  col[0]   ; clk        ; -2.561 ; -2.561 ; Rise       ; clk             ;
+;  col[1]   ; clk        ; -2.735 ; -2.735 ; Rise       ; clk             ;
+;  col[2]   ; clk        ; -2.783 ; -2.783 ; Rise       ; clk             ;
+;  col[3]   ; clk        ; -2.399 ; -2.399 ; Rise       ; clk             ;
+; reset_n   ; clk        ; -2.633 ; -2.633 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; BUZZER       ; clk        ; 5.306 ; 5.306 ; Rise       ; clk             ;
+; HEX0[*]      ; clk        ; 5.210 ; 5.210 ; Rise       ; clk             ;
+;  HEX0[0]     ; clk        ; 4.973 ; 4.973 ; Rise       ; clk             ;
+;  HEX0[1]     ; clk        ; 4.939 ; 4.939 ; Rise       ; clk             ;
+;  HEX0[2]     ; clk        ; 5.210 ; 5.210 ; Rise       ; clk             ;
+;  HEX0[3]     ; clk        ; 4.831 ; 4.831 ; Rise       ; clk             ;
+;  HEX0[4]     ; clk        ; 5.195 ; 5.195 ; Rise       ; clk             ;
+;  HEX0[5]     ; clk        ; 5.116 ; 5.116 ; Rise       ; clk             ;
+;  HEX0[6]     ; clk        ; 4.830 ; 4.830 ; Rise       ; clk             ;
+; HEX1[*]      ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  HEX1[0]     ; clk        ; 4.283 ; 4.283 ; Rise       ; clk             ;
+;  HEX1[1]     ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  HEX1[2]     ; clk        ; 4.126 ; 4.126 ; Rise       ; clk             ;
+;  HEX1[3]     ; clk        ; 4.150 ; 4.150 ; Rise       ; clk             ;
+;  HEX1[4]     ; clk        ; 4.146 ; 4.146 ; Rise       ; clk             ;
+;  HEX1[5]     ; clk        ; 4.257 ; 4.257 ; Rise       ; clk             ;
+;  HEX1[6]     ; clk        ; 4.181 ; 4.181 ; Rise       ; clk             ;
+; HEX2[*]      ; clk        ; 4.145 ; 4.145 ; Rise       ; clk             ;
+;  HEX2[0]     ; clk        ; 4.139 ; 4.139 ; Rise       ; clk             ;
+;  HEX2[1]     ; clk        ; 4.069 ; 4.069 ; Rise       ; clk             ;
+;  HEX2[2]     ; clk        ; 4.112 ; 4.112 ; Rise       ; clk             ;
+;  HEX2[3]     ; clk        ; 4.145 ; 4.145 ; Rise       ; clk             ;
+;  HEX2[4]     ; clk        ; 3.988 ; 3.988 ; Rise       ; clk             ;
+;  HEX2[5]     ; clk        ; 4.113 ; 4.113 ; Rise       ; clk             ;
+;  HEX2[6]     ; clk        ; 4.117 ; 4.117 ; Rise       ; clk             ;
+; HEX3[*]      ; clk        ; 4.187 ; 4.187 ; Rise       ; clk             ;
+;  HEX3[0]     ; clk        ; 4.169 ; 4.169 ; Rise       ; clk             ;
+;  HEX3[1]     ; clk        ; 4.061 ; 4.061 ; Rise       ; clk             ;
+;  HEX3[2]     ; clk        ; 4.085 ; 4.085 ; Rise       ; clk             ;
+;  HEX3[3]     ; clk        ; 4.082 ; 4.082 ; Rise       ; clk             ;
+;  HEX3[4]     ; clk        ; 4.087 ; 4.087 ; Rise       ; clk             ;
+;  HEX3[5]     ; clk        ; 4.180 ; 4.180 ; Rise       ; clk             ;
+;  HEX3[6]     ; clk        ; 4.187 ; 4.187 ; Rise       ; clk             ;
+; LCD_DATA[*]  ; clk        ; 5.030 ; 5.030 ; Rise       ; clk             ;
+;  LCD_DATA[0] ; clk        ; 4.838 ; 4.838 ; Rise       ; clk             ;
+;  LCD_DATA[1] ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
+;  LCD_DATA[2] ; clk        ; 4.530 ; 4.530 ; Rise       ; clk             ;
+;  LCD_DATA[3] ; clk        ; 5.030 ; 5.030 ; Rise       ; clk             ;
+;  LCD_DATA[4] ; clk        ; 4.722 ; 4.722 ; Rise       ; clk             ;
+;  LCD_DATA[5] ; clk        ; 4.559 ; 4.559 ; Rise       ; clk             ;
+;  LCD_DATA[6] ; clk        ; 4.919 ; 4.919 ; Rise       ; clk             ;
+;  LCD_DATA[7] ; clk        ; 4.859 ; 4.859 ; Rise       ; clk             ;
+; LCD_EN       ; clk        ; 4.473 ; 4.473 ; Rise       ; clk             ;
+; LCD_RS       ; clk        ; 4.217 ; 4.217 ; Rise       ; clk             ;
+; LEDG         ; clk        ; 4.698 ; 4.698 ; Rise       ; clk             ;
+; LEDR         ; clk        ; 5.087 ; 5.087 ; Rise       ; clk             ;
+; row[*]       ; clk        ; 4.789 ; 4.789 ; Rise       ; clk             ;
+;  row[0]      ; clk        ; 4.775 ; 4.775 ; Rise       ; clk             ;
+;  row[1]      ; clk        ; 4.741 ; 4.741 ; Rise       ; clk             ;
+;  row[2]      ; clk        ; 4.778 ; 4.778 ; Rise       ; clk             ;
+;  row[3]      ; clk        ; 4.789 ; 4.789 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; BUZZER       ; clk        ; 4.975 ; 4.975 ; Rise       ; clk             ;
+; HEX0[*]      ; clk        ; 4.703 ; 4.703 ; Rise       ; clk             ;
+;  HEX0[0]     ; clk        ; 4.846 ; 4.846 ; Rise       ; clk             ;
+;  HEX0[1]     ; clk        ; 4.812 ; 4.812 ; Rise       ; clk             ;
+;  HEX0[2]     ; clk        ; 5.082 ; 5.082 ; Rise       ; clk             ;
+;  HEX0[3]     ; clk        ; 4.706 ; 4.706 ; Rise       ; clk             ;
+;  HEX0[4]     ; clk        ; 5.071 ; 5.071 ; Rise       ; clk             ;
+;  HEX0[5]     ; clk        ; 4.987 ; 4.987 ; Rise       ; clk             ;
+;  HEX0[6]     ; clk        ; 4.703 ; 4.703 ; Rise       ; clk             ;
+; HEX1[*]      ; clk        ; 4.000 ; 4.000 ; Rise       ; clk             ;
+;  HEX1[0]     ; clk        ; 4.150 ; 4.150 ; Rise       ; clk             ;
+;  HEX1[1]     ; clk        ; 4.251 ; 4.251 ; Rise       ; clk             ;
+;  HEX1[2]     ; clk        ; 4.000 ; 4.000 ; Rise       ; clk             ;
+;  HEX1[3]     ; clk        ; 4.020 ; 4.020 ; Rise       ; clk             ;
+;  HEX1[4]     ; clk        ; 4.018 ; 4.018 ; Rise       ; clk             ;
+;  HEX1[5]     ; clk        ; 4.127 ; 4.127 ; Rise       ; clk             ;
+;  HEX1[6]     ; clk        ; 4.056 ; 4.056 ; Rise       ; clk             ;
+; HEX2[*]      ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  HEX2[0]     ; clk        ; 4.009 ; 4.009 ; Rise       ; clk             ;
+;  HEX2[1]     ; clk        ; 3.936 ; 3.936 ; Rise       ; clk             ;
+;  HEX2[2]     ; clk        ; 3.979 ; 3.979 ; Rise       ; clk             ;
+;  HEX2[3]     ; clk        ; 4.015 ; 4.015 ; Rise       ; clk             ;
+;  HEX2[4]     ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  HEX2[5]     ; clk        ; 3.983 ; 3.983 ; Rise       ; clk             ;
+;  HEX2[6]     ; clk        ; 3.982 ; 3.982 ; Rise       ; clk             ;
+; HEX3[*]      ; clk        ; 3.853 ; 3.853 ; Rise       ; clk             ;
+;  HEX3[0]     ; clk        ; 3.963 ; 3.963 ; Rise       ; clk             ;
+;  HEX3[1]     ; clk        ; 3.853 ; 3.853 ; Rise       ; clk             ;
+;  HEX3[2]     ; clk        ; 3.877 ; 3.877 ; Rise       ; clk             ;
+;  HEX3[3]     ; clk        ; 3.879 ; 3.879 ; Rise       ; clk             ;
+;  HEX3[4]     ; clk        ; 3.880 ; 3.880 ; Rise       ; clk             ;
+;  HEX3[5]     ; clk        ; 3.973 ; 3.973 ; Rise       ; clk             ;
+;  HEX3[6]     ; clk        ; 3.984 ; 3.984 ; Rise       ; clk             ;
+; LCD_DATA[*]  ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
+;  LCD_DATA[0] ; clk        ; 4.838 ; 4.838 ; Rise       ; clk             ;
+;  LCD_DATA[1] ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
+;  LCD_DATA[2] ; clk        ; 4.530 ; 4.530 ; Rise       ; clk             ;
+;  LCD_DATA[3] ; clk        ; 5.030 ; 5.030 ; Rise       ; clk             ;
+;  LCD_DATA[4] ; clk        ; 4.722 ; 4.722 ; Rise       ; clk             ;
+;  LCD_DATA[5] ; clk        ; 4.559 ; 4.559 ; Rise       ; clk             ;
+;  LCD_DATA[6] ; clk        ; 4.919 ; 4.919 ; Rise       ; clk             ;
+;  LCD_DATA[7] ; clk        ; 4.859 ; 4.859 ; Rise       ; clk             ;
+; LCD_EN       ; clk        ; 4.473 ; 4.473 ; Rise       ; clk             ;
+; LCD_RS       ; clk        ; 4.217 ; 4.217 ; Rise       ; clk             ;
+; LEDG         ; clk        ; 4.698 ; 4.698 ; Rise       ; clk             ;
+; LEDR         ; clk        ; 4.756 ; 4.756 ; Rise       ; clk             ;
+; row[*]       ; clk        ; 4.525 ; 4.525 ; Rise       ; clk             ;
+;  row[0]      ; clk        ; 4.585 ; 4.585 ; Rise       ; clk             ;
+;  row[1]      ; clk        ; 4.525 ; 4.525 ; Rise       ; clk             ;
+;  row[2]      ; clk        ; 4.590 ; 4.590 ; Rise       ; clk             ;
+;  row[3]      ; clk        ; 4.573 ; 4.573 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -4.314   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -4.314   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -524.009 ; 0.0   ; 0.0      ; 0.0     ; -203.38             ;
+;  clk             ; -524.009 ; 0.000 ; N/A      ; N/A     ; -203.380            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; col[*]    ; clk        ; 9.145 ; 9.145 ; Rise       ; clk             ;
+;  col[0]   ; clk        ; 8.967 ; 8.967 ; Rise       ; clk             ;
+;  col[1]   ; clk        ; 9.111 ; 9.111 ; Rise       ; clk             ;
+;  col[2]   ; clk        ; 9.145 ; 9.145 ; Rise       ; clk             ;
+;  col[3]   ; clk        ; 8.560 ; 8.560 ; Rise       ; clk             ;
+; reset_n   ; clk        ; 5.012 ; 5.012 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; col[*]    ; clk        ; -2.399 ; -2.399 ; Rise       ; clk             ;
+;  col[0]   ; clk        ; -2.561 ; -2.561 ; Rise       ; clk             ;
+;  col[1]   ; clk        ; -2.735 ; -2.735 ; Rise       ; clk             ;
+;  col[2]   ; clk        ; -2.783 ; -2.783 ; Rise       ; clk             ;
+;  col[3]   ; clk        ; -2.399 ; -2.399 ; Rise       ; clk             ;
+; reset_n   ; clk        ; -2.633 ; -2.633 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; BUZZER       ; clk        ; 9.859 ; 9.859 ; Rise       ; clk             ;
+; HEX0[*]      ; clk        ; 9.823 ; 9.823 ; Rise       ; clk             ;
+;  HEX0[0]     ; clk        ; 9.173 ; 9.173 ; Rise       ; clk             ;
+;  HEX0[1]     ; clk        ; 9.086 ; 9.086 ; Rise       ; clk             ;
+;  HEX0[2]     ; clk        ; 9.823 ; 9.823 ; Rise       ; clk             ;
+;  HEX0[3]     ; clk        ; 8.887 ; 8.887 ; Rise       ; clk             ;
+;  HEX0[4]     ; clk        ; 9.797 ; 9.797 ; Rise       ; clk             ;
+;  HEX0[5]     ; clk        ; 9.598 ; 9.598 ; Rise       ; clk             ;
+;  HEX0[6]     ; clk        ; 8.889 ; 8.889 ; Rise       ; clk             ;
+; HEX1[*]      ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  HEX1[0]     ; clk        ; 7.792 ; 7.792 ; Rise       ; clk             ;
+;  HEX1[1]     ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  HEX1[2]     ; clk        ; 7.588 ; 7.588 ; Rise       ; clk             ;
+;  HEX1[3]     ; clk        ; 7.623 ; 7.623 ; Rise       ; clk             ;
+;  HEX1[4]     ; clk        ; 7.605 ; 7.605 ; Rise       ; clk             ;
+;  HEX1[5]     ; clk        ; 7.871 ; 7.871 ; Rise       ; clk             ;
+;  HEX1[6]     ; clk        ; 7.656 ; 7.656 ; Rise       ; clk             ;
+; HEX2[*]      ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+;  HEX2[0]     ; clk        ; 7.541 ; 7.541 ; Rise       ; clk             ;
+;  HEX2[1]     ; clk        ; 7.463 ; 7.463 ; Rise       ; clk             ;
+;  HEX2[2]     ; clk        ; 7.509 ; 7.509 ; Rise       ; clk             ;
+;  HEX2[3]     ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+;  HEX2[4]     ; clk        ; 7.229 ; 7.229 ; Rise       ; clk             ;
+;  HEX2[5]     ; clk        ; 7.511 ; 7.511 ; Rise       ; clk             ;
+;  HEX2[6]     ; clk        ; 7.527 ; 7.527 ; Rise       ; clk             ;
+; HEX3[*]      ; clk        ; 7.735 ; 7.735 ; Rise       ; clk             ;
+;  HEX3[0]     ; clk        ; 7.706 ; 7.706 ; Rise       ; clk             ;
+;  HEX3[1]     ; clk        ; 7.439 ; 7.439 ; Rise       ; clk             ;
+;  HEX3[2]     ; clk        ; 7.481 ; 7.481 ; Rise       ; clk             ;
+;  HEX3[3]     ; clk        ; 7.479 ; 7.479 ; Rise       ; clk             ;
+;  HEX3[4]     ; clk        ; 7.484 ; 7.484 ; Rise       ; clk             ;
+;  HEX3[5]     ; clk        ; 7.730 ; 7.730 ; Rise       ; clk             ;
+;  HEX3[6]     ; clk        ; 7.735 ; 7.735 ; Rise       ; clk             ;
+; LCD_DATA[*]  ; clk        ; 9.193 ; 9.193 ; Rise       ; clk             ;
+;  LCD_DATA[0] ; clk        ; 8.779 ; 8.779 ; Rise       ; clk             ;
+;  LCD_DATA[1] ; clk        ; 7.759 ; 7.759 ; Rise       ; clk             ;
+;  LCD_DATA[2] ; clk        ; 8.300 ; 8.300 ; Rise       ; clk             ;
+;  LCD_DATA[3] ; clk        ; 9.193 ; 9.193 ; Rise       ; clk             ;
+;  LCD_DATA[4] ; clk        ; 8.797 ; 8.797 ; Rise       ; clk             ;
+;  LCD_DATA[5] ; clk        ; 8.230 ; 8.230 ; Rise       ; clk             ;
+;  LCD_DATA[6] ; clk        ; 9.164 ; 9.164 ; Rise       ; clk             ;
+;  LCD_DATA[7] ; clk        ; 9.080 ; 9.080 ; Rise       ; clk             ;
+; LCD_EN       ; clk        ; 8.020 ; 8.020 ; Rise       ; clk             ;
+; LCD_RS       ; clk        ; 7.568 ; 7.568 ; Rise       ; clk             ;
+; LEDG         ; clk        ; 8.570 ; 8.570 ; Rise       ; clk             ;
+; LEDR         ; clk        ; 9.417 ; 9.417 ; Rise       ; clk             ;
+; row[*]       ; clk        ; 8.881 ; 8.881 ; Rise       ; clk             ;
+;  row[0]      ; clk        ; 8.845 ; 8.845 ; Rise       ; clk             ;
+;  row[1]      ; clk        ; 8.797 ; 8.797 ; Rise       ; clk             ;
+;  row[2]      ; clk        ; 8.881 ; 8.881 ; Rise       ; clk             ;
+;  row[3]      ; clk        ; 8.844 ; 8.844 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; BUZZER       ; clk        ; 4.975 ; 4.975 ; Rise       ; clk             ;
+; HEX0[*]      ; clk        ; 4.703 ; 4.703 ; Rise       ; clk             ;
+;  HEX0[0]     ; clk        ; 4.846 ; 4.846 ; Rise       ; clk             ;
+;  HEX0[1]     ; clk        ; 4.812 ; 4.812 ; Rise       ; clk             ;
+;  HEX0[2]     ; clk        ; 5.082 ; 5.082 ; Rise       ; clk             ;
+;  HEX0[3]     ; clk        ; 4.706 ; 4.706 ; Rise       ; clk             ;
+;  HEX0[4]     ; clk        ; 5.071 ; 5.071 ; Rise       ; clk             ;
+;  HEX0[5]     ; clk        ; 4.987 ; 4.987 ; Rise       ; clk             ;
+;  HEX0[6]     ; clk        ; 4.703 ; 4.703 ; Rise       ; clk             ;
+; HEX1[*]      ; clk        ; 4.000 ; 4.000 ; Rise       ; clk             ;
+;  HEX1[0]     ; clk        ; 4.150 ; 4.150 ; Rise       ; clk             ;
+;  HEX1[1]     ; clk        ; 4.251 ; 4.251 ; Rise       ; clk             ;
+;  HEX1[2]     ; clk        ; 4.000 ; 4.000 ; Rise       ; clk             ;
+;  HEX1[3]     ; clk        ; 4.020 ; 4.020 ; Rise       ; clk             ;
+;  HEX1[4]     ; clk        ; 4.018 ; 4.018 ; Rise       ; clk             ;
+;  HEX1[5]     ; clk        ; 4.127 ; 4.127 ; Rise       ; clk             ;
+;  HEX1[6]     ; clk        ; 4.056 ; 4.056 ; Rise       ; clk             ;
+; HEX2[*]      ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  HEX2[0]     ; clk        ; 4.009 ; 4.009 ; Rise       ; clk             ;
+;  HEX2[1]     ; clk        ; 3.936 ; 3.936 ; Rise       ; clk             ;
+;  HEX2[2]     ; clk        ; 3.979 ; 3.979 ; Rise       ; clk             ;
+;  HEX2[3]     ; clk        ; 4.015 ; 4.015 ; Rise       ; clk             ;
+;  HEX2[4]     ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  HEX2[5]     ; clk        ; 3.983 ; 3.983 ; Rise       ; clk             ;
+;  HEX2[6]     ; clk        ; 3.982 ; 3.982 ; Rise       ; clk             ;
+; HEX3[*]      ; clk        ; 3.853 ; 3.853 ; Rise       ; clk             ;
+;  HEX3[0]     ; clk        ; 3.963 ; 3.963 ; Rise       ; clk             ;
+;  HEX3[1]     ; clk        ; 3.853 ; 3.853 ; Rise       ; clk             ;
+;  HEX3[2]     ; clk        ; 3.877 ; 3.877 ; Rise       ; clk             ;
+;  HEX3[3]     ; clk        ; 3.879 ; 3.879 ; Rise       ; clk             ;
+;  HEX3[4]     ; clk        ; 3.880 ; 3.880 ; Rise       ; clk             ;
+;  HEX3[5]     ; clk        ; 3.973 ; 3.973 ; Rise       ; clk             ;
+;  HEX3[6]     ; clk        ; 3.984 ; 3.984 ; Rise       ; clk             ;
+; LCD_DATA[*]  ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
+;  LCD_DATA[0] ; clk        ; 4.838 ; 4.838 ; Rise       ; clk             ;
+;  LCD_DATA[1] ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
+;  LCD_DATA[2] ; clk        ; 4.530 ; 4.530 ; Rise       ; clk             ;
+;  LCD_DATA[3] ; clk        ; 5.030 ; 5.030 ; Rise       ; clk             ;
+;  LCD_DATA[4] ; clk        ; 4.722 ; 4.722 ; Rise       ; clk             ;
+;  LCD_DATA[5] ; clk        ; 4.559 ; 4.559 ; Rise       ; clk             ;
+;  LCD_DATA[6] ; clk        ; 4.919 ; 4.919 ; Rise       ; clk             ;
+;  LCD_DATA[7] ; clk        ; 4.859 ; 4.859 ; Rise       ; clk             ;
+; LCD_EN       ; clk        ; 4.473 ; 4.473 ; Rise       ; clk             ;
+; LCD_RS       ; clk        ; 4.217 ; 4.217 ; Rise       ; clk             ;
+; LEDG         ; clk        ; 4.698 ; 4.698 ; Rise       ; clk             ;
+; LEDR         ; clk        ; 4.756 ; 4.756 ; Rise       ; clk             ;
+; row[*]       ; clk        ; 4.525 ; 4.525 ; Rise       ; clk             ;
+;  row[0]      ; clk        ; 4.585 ; 4.585 ; Rise       ; clk             ;
+;  row[1]      ; clk        ; 4.525 ; 4.525 ; Rise       ; clk             ;
+;  row[2]      ; clk        ; 4.590 ; 4.590 ; Rise       ; clk             ;
+;  row[3]      ; clk        ; 4.573 ; 4.573 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 8690     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 8690     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 270   ; 270  ;
+; Unconstrained Output Ports      ; 45    ; 45   ;
+; Unconstrained Output Port Paths ; 141   ; 141  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 22 10:03:20 2026
+Info: Command: quartus_sta top_module -c top_module
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top_module.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.314
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.314      -524.009 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -203.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.473
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.473      -141.201 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -203.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4558 megabytes
+    Info: Processing ended: Fri May 22 10:03:21 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
