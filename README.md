@@ -4,6 +4,10 @@
 This repository contains the design and hardware implementation of a **Secure Electronic Combination Lock System (4-digit PIN)** deployed on the **Altera DE2 (Cyclone II FPGA)** development kit. Built entirely from scratch using **Verilog HDL**, the system features a hardware-centric, multi-layered architectural design leveraging Finite State Machines (FSM) and high-speed parallel processing.
 
 ---
+## Authors
+Gia Huy Vo @Ghuyv2412
+
+---
 
 ## Key Features
 
@@ -25,7 +29,7 @@ This repository contains the design and hardware implementation of a **Secure El
 
 ---
 
-## 📐 Verilog Module Architecture
+## Verilog Module Architecture
 
 The system utilizes a structured, hierarchical "divide-and-conquer" approach, split into three main operational blocks:
 
